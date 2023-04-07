@@ -86,8 +86,25 @@ function scrapeStyle() {
 
 
 
-4. a) scrape from basket mini cart and checkout
-   b) datalayer
+4. 
+A) We can scrape from the datalayer to get the products, price and the quantity of each product or just return how many items are in the basket. To access the global JS datalayer object we can use this to get each items price and quantity.
+```javascript
    `dataLayer[0].basketProducts[0].price`
    `dataLayer[0].basketProducts[0].quantity`
-   for each product
+```
+We could also check the length of `dataLayer[0].basketProducts` to get the product count.
+
+
+B) We can also scrape form the mini cart by using 
+```
+document.querySelector('.nav-item__basket-price.basket-total-text-top').textContent
+```
+Or
+```
+document.querySelector('.nav-item__basket-price.basket-total-text-top').textContent.replace(/£/g,'')
+```
+To get rid of the pound sign too.
+To get the quantity of the items in the cart we can use:
+```
+document.querySelector('.nav-item__basket-count').textContent
+
