@@ -1,10 +1,8 @@
+1. I've attached the code for this question in the folder `Q1`.
 
-1.
-
-2.
+2. Also attached in the file `Q2.js`
 
 ```javascript
-
 function highlightPrices() {
   const priceSelector = ".mErEH";
 
@@ -36,13 +34,11 @@ function highlightPrices() {
 }
 
 setInterval(() => highlightPrices(), 1000);
-
-
 ```
 
 3. 'You're a step away from rediscovering your style' Is not available so I have replaced the first subtitle with the style instead.
 
-
+- I've also attached this in file `Q3`
 
 ```javascript
 const STYLE_BUTTON_SELECTOR = '[data-testid*="style-option"]';
@@ -79,32 +75,34 @@ function scrapeStyle() {
     localStorage.setItem(KEY_NAME, styleText);
   }, 1000);
 }
-
-
-
 ```
 
+4.
 
+- **Option A:** We can scrape from the datalayer to get the products, price and the quantity of each product or just return how many items are in the basket. To access the global JS datalayer object we can use this to get each items price and quantity.
 
-4. 
-A) We can scrape from the datalayer to get the products, price and the quantity of each product or just return how many items are in the basket. To access the global JS datalayer object we can use this to get each items price and quantity.
 ```javascript
-   `dataLayer[0].basketProducts[0].price`
-   `dataLayer[0].basketProducts[0].quantity`
+`dataLayer[0].basketProducts[0].price``dataLayer[0].basketProducts[0].quantity`;
 ```
-We could also check the length of `dataLayer[0].basketProducts` to get the product count.
 
+- We could also check the length of `dataLayer[0].basketProducts` to get the product count.
 
-B) We can also scrape form the mini cart by using 
+- **Option B:** We can also scrape form the mini cart by using
+
 ```
 document.querySelector('.nav-item__basket-price.basket-total-text-top').textContent
 ```
+
 Or
+
 ```
 document.querySelector('.nav-item__basket-price.basket-total-text-top').textContent.replace(/£/g,'')
 ```
-To get rid of the pound sign too.
-To get the quantity of the items in the cart we can use:
+
+- To get rid of the pound sign too.
+- To get the quantity of the items in the cart we can use:
+
 ```
 document.querySelector('.nav-item__basket-count').textContent
 
+```
